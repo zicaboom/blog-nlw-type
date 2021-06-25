@@ -1,17 +1,22 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn } from "typeorm";
+import {Column, CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn} from "typeorm";
 import { v4 as uuid} from "uuid"
 
-@Entity("posts")
-class Post {
-
+@Entity("users")
+class User {
     @PrimaryColumn()
     readonly id: string
 
     @Column()
-    title: string 
+    email: string
 
     @Column()
-    content: string 
+    name: string
+
+    @Column()
+    password: string
+
+    @Column()
+    admin: boolean
 
     @CreateDateColumn()
     created_at: Date
@@ -25,5 +30,4 @@ class Post {
         }
     }
 }
-
-export { Post }
+export { User }

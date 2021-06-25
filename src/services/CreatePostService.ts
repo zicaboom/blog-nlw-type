@@ -1,13 +1,13 @@
 import { getCustomRepository } from "typeorm"
 import { PostsRepositories } from "../repositories/PostsRepositories"
 
-interface IPostRequest{
+interface IPostCreate{
     title: string
     content: string
 }
 
 class CreatePostService{
-    async execute({title, content} : IPostRequest){
+    async execute({title, content} : IPostCreate){
         const postsRepository = getCustomRepository(PostsRepositories)
 
         if(!title){
